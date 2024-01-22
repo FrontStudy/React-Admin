@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <p>준원입니다. 잘부탁드립니다.</p>
+      <p>안녕하세요.</p>
     </div>
   );
 }
