@@ -4,9 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>
-        Hello Yuk~!
-      </h1>
+      <p>준원입니다. 잘부탁드립니다.</p>
     </div>
   );
 }
