@@ -4,7 +4,7 @@ function Main() {
   return (
     <div className='Main'>
         <h2>
-            메인화면
+          랜딩페이지
         </h2>
     </div>
   );
