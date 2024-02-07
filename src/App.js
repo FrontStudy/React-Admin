@@ -1,18 +1,17 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Main from './screen/Main';
-import ScreenA from './screen/ScreenA';
-import ScreenB from './screen/ScreenB';
-import ScreenC from './screen/ScreenC';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DashBoard from './Components/DashBoard';
+import DiaryEntry from './Components/DiaryEntry';
 
 function App() {
   return (
-    <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/ScreenA' element={<ScreenA />} />
-        <Route path='/ScreenB' element={<ScreenB />} />
-        <Route path='/ScreenC' element={<ScreenC />} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/calendar" element={<DashBoard />} />
+        <Route path="/diary/:date" element={<DiaryEntry />} />
+        <Route path="/" element={<DashBoard />} /> 
+      </Routes>
+    </Router>
   );
 }
 
