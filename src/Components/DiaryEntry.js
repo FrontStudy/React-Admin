@@ -24,7 +24,7 @@ function DiaryEntry() {
             let savedEntries = JSON.parse(localStorage.getItem('diaryEntries') || '[]');
             savedEntries.push(newEntry);
             localStorage.setItem('diaryEntries', JSON.stringify(savedEntries));
-            navigate('/calendar');
+            // navigate('/calendar');
         }
     };
 

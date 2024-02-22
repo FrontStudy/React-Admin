@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -6,7 +5,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useNavigate } from 'react-router-dom';
 
-function DashBoard() {
+function Diarymain() {
     const navigate = useNavigate();
     const [entries, setEntries] = useState([
         { title: 'Example Event 1', date: '2023-05-11' },
@@ -54,29 +53,40 @@ function DashBoard() {
         localStorage.setItem('diaryEntries', JSON.stringify(filteredEntries));
         setEntries(filteredEntries);
     }
+
+    const goToAdminPage = () => {
+        navigate('/Adminmain');
+      };
+
     return (
-        <div style={{ display: 'flex', margin: '50px' }}>
-            <div style={{ flex: 1 }}>
-                <h2>Dashboard</h2>
-                <p>다른 사람의 일기장보기(?)</p>
-            </div>
-        <div style={{ flex: 3, marginRight: '20px' }}>
-            <FullCalendar
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                initialView="dayGridMonth"
-                headerToolbar={{
+        <>
+            <div style={{ display: 'flex', margin: '50px' }}>
+                <div style={{ flex: 1 }}>
+                    <h2>Dashboard</h2>
+                    <p>다른 사람의 일기장보기(?)</p>
+                </div>
+                <div style={{ flex: 3, marginRight: '20px' }}>
+                    <FullCalendar
+                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                    initialView="dayGridMonth"
+                    headerToolbar={{
                     start: 'prev,next today',
                     center: 'title',
                     end: 'dayGridMonth'
-                }}
-                height="75vh"
-                dateClick={dateClick}
-                events={entries}
-                eventContent={renderEventContent}
-            />
-        </div>
-    </div>
+                    }}
+                    height="75vh"
+                    dateClick={dateClick}
+                    events={entries}
+                    eventContent={renderEventContent}
+                    />
+                </div>
+            </div>
+            <button onClick={goToAdminPage}>
+                관리자 페이지
+            </button>
+        </>
+
     );
 }
 
-export default DashBoard;
+export default Diarymain;

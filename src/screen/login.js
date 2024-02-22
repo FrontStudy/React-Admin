@@ -1,11 +1,14 @@
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from 'react';
 import * as STR from "../../src/service/string";
 
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const {
     handleSubmit,
     register,
@@ -29,6 +32,10 @@ export default function Login() {
       )
       .then((res) => {
         console.log("로그인 됨");
+          setTimeout(() => {
+            navigate("/Diarymain");
+            window.location.reload();
+          }, 1000);
         const RES = res.data;
         if (RES.status === "fail") {
           console.log("fail");
@@ -53,7 +60,6 @@ export default function Login() {
       });
     }
 
-    // Cleanup event listeners
     return () => {
       if(signUpButton) {
         signUpButton.removeEventListener('click', () => {
