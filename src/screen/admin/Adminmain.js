@@ -1,24 +1,22 @@
 import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './NavBar';
 import MemberList from './MemberList';
 import MemberPost from './MemberPost';
 
 function Adminmain() {
-  const [activeComponent, setActiveComponent] = React.useState('memberList');
-
-  const handleMenuClick = (componentName) => {
-    setActiveComponent(componentName);
-  };
-
   return (
     <div id="AdminMain" className="Adminmain">
       <div className="Sidebar">
-        <NavBar onMenuClick={handleMenuClick} />
+        <NavBar />
       </div>
       <div className="MainContent">
-        {activeComponent === 'memberList' && <MemberList />}
-        {activeComponent === 'memberPost' && <MemberPost />}
-        {/* You can add other conditional components here */}
+        <Routes>
+          <Route path="memberlist" element={<MemberList />} /> {/* Remove the leading slash */}
+          <Route path="memberpost" element={<MemberPost />} /> {/* Remove the leading slash */}
+          {/* Redirect to /Adminmain/memberlist as default */}
+          <Route path="*" element={<Navigate replace to="memberlist" />} /> {/* Use relative path */}
+        </Routes>
       </div>
     </div>
   );

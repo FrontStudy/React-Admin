@@ -12,7 +12,7 @@ function App() {
         <Route path="/calendar" element={<Diarymain />} />
         <Route path="/diary/:date" element={<DiaryEntry />} />
         <Route path="/Diarymain" element={<Diarymain />} /> 
-        <Route path="/Adminmain" element={<Adminmain />} /> 
+        <Route path="/Adminmain/*" element={<Adminmain />} /> 
         <Route path="/" element={<Login />} /> 
       </Routes>
   );

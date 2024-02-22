@@ -1,20 +1,24 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-function NavBar({ onMenuClick }) {
+function NavBar() {
   return (
     <nav className="NavBar">
       <div className="NavBar-header">
-        <h2>관리자메뉴</h2> {/* Admin Menu */}
+        <h2>관리자메뉴</h2>
       </div>
       <ul className="NavBar-menu">
-        <li onClick={() => onMenuClick('memberList')}>
-          <span className="NavBar-icon">👤</span>
-          <span className="NavBar-text">회원목록</span>
+        <li>
+          <NavLink to="memberlist" className={({ isActive }) => isActive ? 'active' : ''}>
+            회원목록
+          </NavLink>
         </li>
-        <li onClick={() => onMenuClick('memberPost')}>
-          <span className="NavBar-icon">📚</span>
-          <span className="NavBar-text">회원게시글</span>
+        <li>
+          <NavLink to="memberpost" className={({ isActive }) => isActive ? 'active' : ''}>
+            회원게시글
+          </NavLink>
         </li>
+        {/* Add more links as needed */}
       </ul>
     </nav>
   );

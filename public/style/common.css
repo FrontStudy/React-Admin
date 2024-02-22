@@ -252,6 +252,12 @@
     background-color: #f6f9ff;
   }
   
+  #AdminMain .MainContent .menutitle h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5% 0px;
+  }
+
   #AdminMain .Sidebar {
     width: 250px;
     background-color: #f6f9ff; 
@@ -262,11 +268,8 @@
   
   #AdminMain .MainContent {
     flex-grow: 1;
-    background-color: #ecf0f1; 
+    /* background-color: #ecf0f1;  */
     padding: 20px; 
-  }
-  
-  #AdminMain .SidebarMenu {
   }
   
   #AdminMain .SidebarMenu ul {
@@ -313,3 +316,40 @@
   #AdminMain .NavBar-text {
     font-size: 16px;
   }
+
+  /* 관리자 페이지 회원목록  */
+#AdminMain .menutitle .content_bg {
+    background-color: #fff;
+    border: 1px solid black;
+  }
+#AdminMain .MainContent table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  /* margin-top: 20px; */
+}
+
+#AdminMain .MainContent table th {
+  font-size: larger; /* Makes the text larger than the default */
+  /* Alternatively, you can specify a specific font size, e.g., font-size: 18px; */
+  font-weight: bold; /* Makes the text bold */
+  padding: 15px; /* Increases padding for a larger clickable area and more space */
+}
+
+#AdminMain .MainContent th, 
+#AdminMain .MainContent td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+#AdminMain .MainContent th {
+  background-color: #f2f2f2;
+}
+
+#AdminMain .MainContent tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; 
+}
+
+#AdminMain .MainContent tbody tr:hover {
+  background-color: #e2e2e2;
+}
