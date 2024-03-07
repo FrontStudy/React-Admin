@@ -247,6 +247,119 @@
       text-decoration: none;
   }
 
+
+
+  /* 관리자 페이지 메인 */
+
+  #AdminMain {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #f6f9ff;
+  }
+  
+  #AdminMain .MainContent .menutitle h3 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5% 0px;
+  }
+
+  #AdminMain .Sidebar {
+    width: 250px;
+    background-color: #f6f9ff; 
+    color: #181818;
+    padding-top: 20px; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #AdminMain .MainContent {
+    flex-grow: 1;
+    /* background-color: #ecf0f1;  */
+    padding: 20px; 
+  }
+  
+  #AdminMain .SidebarMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #AdminMain .SidebarMenu li {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-bottom: 1px solid #34495e; 
+  }
+
+  /* 관리자 페이지 Navbar */
+
+  #AdminMain .SidebarMenu li:hover {
+    background-color: #34495e; 
+  }
+
+  #AdminMain .SidebarMenu li.active {
+    background-color: #1ABC9C;
+  }
+
+  #AdminMain .NavBar-header {
+    padding: 20px;
+  }
+  
+  #AdminMain .NavBar-menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #AdminMain .NavBar-menu li {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  #AdminMain .NavBar-icon {
+    margin-right: 10px;
+  }
+  
+  #AdminMain .NavBar-text {
+    font-size: 16px;
+  }
+
+  /* 관리자 페이지 회원목록  */
+#AdminMain .menutitle .content_bg {
+    background-color: #fff;
+    border: 1px solid black;
+  }
+#AdminMain .MainContent table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  /* margin-top: 20px; */
+}
+
+#AdminMain .MainContent table th {
+  font-size: larger; /* Makes the text larger than the default */
+  /* Alternatively, you can specify a specific font size, e.g., font-size: 18px; */
+  font-weight: bold; /* Makes the text bold */
+  padding: 15px; /* Increases padding for a larger clickable area and more space */
+}
+
+#AdminMain .MainContent th, 
+#AdminMain .MainContent td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+#AdminMain .MainContent th {
+  background-color: #f2f2f2;
+}
+
+#AdminMain .MainContent tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; 
+}
+
+#AdminMain .MainContent tbody tr:hover {
+  background-color: #e2e2e2;
+}
+=======
   #root{
     width: 100%;
   }
