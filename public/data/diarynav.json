@@ -1,0 +1,14 @@
+[
+    { 
+        "name": "홈",
+        "url": "/Diarymain"
+    },
+    {
+        "name": "나의 일기장",
+        "url": "/Mydiarypage"
+    },
+    {
+        "name": "마이 페이지",
+        "url": "/Mymemberinformation"
+    }   
+]

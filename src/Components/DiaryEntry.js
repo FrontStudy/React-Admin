@@ -29,26 +29,26 @@ function DiaryEntry() {
     };
 
     return (
-<div style={{ display: 'flex', padding: '50px' }}>
-    <div style={{ flex: 1, marginRight: '10px' }}>
-        <h2>나의 일기장 {date}</h2>
-        <textarea
-            value={entry}
-            onChange={(e) => setEntry(e.target.value)}
-            style={{ width: '100%', height: '300px', marginBottom: '10px' }}
-        ></textarea>
-        <button onClick={() => handleSave()}>저장</button>
-    </div>
+    <div style={{ display: 'flex', padding: '50px' }}>
+        <div style={{ flex: 1, marginRight: '10px' }}>
+            <h2>나의 일기장 {date}</h2>
+            <textarea
+                value={entry}
+                onChange={(e) => setEntry(e.target.value)}
+                style={{ width: '100%', height: '300px', marginBottom: '10px' }}
+            ></textarea>
+            <button onClick={() => handleSave()}>저장</button>
+        </div>
 
-    <div style={{ flex: 1 }}>
-    <h2>Previous Entries</h2>
-    <ul>
-        {entries.map((entry, index) => (
-            <li key={index}>{date} {entry.title}</li>
-        ))}
-    </ul>
+        <div style={{ flex: 1 }}>
+        <h2>Previous Entries</h2>
+        <ul>
+            {entries.map((entry, index) => (
+                <li key={index}>{date} {entry.title}</li>
+            ))}
+        </ul>
+        </div>
     </div>
-</div>
     );
 }
 

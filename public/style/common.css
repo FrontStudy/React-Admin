@@ -12,7 +12,12 @@
     height: 100vh;
     margin: -20px 0 50px;
   }
-  
+
+  #Login {
+    display: flex;
+    justify-content: center;
+  }
+
   #Login h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -243,6 +248,7 @@
   }
 
 
+
   /* 관리자 페이지 메인 */
 
   #AdminMain {
@@ -352,4 +358,109 @@
 
 #AdminMain .MainContent tbody tr:hover {
   background-color: #e2e2e2;
+}
+=======
+  #root{
+    width: 100%;
+  }
+
+  :root{
+
+    --diary-one-color: #F1C40F;
+    --diary-two-color: #F9E493;
+    --diary-three-color: #F2EFE4;
+    --diary-four-color: #F28E13;
+    --diary-five-color: #FCF3CF;
+
+    --diary-container-color: #fff;
+    --diary-hl-font-size: 2.25rem;
+    --diary-h2-font-size: 1.5rem;
+    --diary-h3-font-size: 1.25rem;
+    --diary-normal-font-size: 1rem;
+    --diary-small-font-size: 0.875rem;
+    --diary-smaller-font-size: 0.813rem; 
+
+    --diary-font-medium: 500;
+    --diary-font-semibold: 600;
+    --diary-font-bold:700;
+
+    --diary-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+
+    --diary-border-radius: 20px;
+  }
+
+.adminmainbuttonbox {
+  width: 100%;
+  position: absolute;
+  bottom: 60px;
+  text-align: center;
+}
+
+.adminmainbutton{
+  box-shadow: var(--diary-shadow);
+  font-size: var(--diary-normal-font-size);
+  border: none;
+  line-height: 2;
+  padding: 0.5rem;
+  width: 10rem;
+  background: var(--diary-two-color);
+  border-radius: var(--diary-border-radius);
+  font-weight: var(--diary-font-bold);
+}
+
+#diarywrap {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+} 
+
+.containerWrap {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 93.5vh;
+  padding: 1.25rem;
+}
+
+.diarycontentBox {
+  width: 75rem;
+  height: auto;
+}
+
+.diarynav{
+  position: relative;
+  background: var(--diary-five-color);
+}
+
+.diarylogo {
+  font-size: var(--diary-h2-font-size);
+  font-weight: var(--diary-font-bold);
+  line-height: 3;
+  text-align: center;
+}
+
+.diarynav li {
+  line-height: 3;
+  padding-left: 1.65rem;
+}
+
+.diarynav li a {
+  font-size: var(--diary-h3-font-size);
+  font-weight: var(--diary-font-bold);
+  text-decoration: none;
+  color: inherit;
+}
+
+#diaryheader {
+  height: 80px;
+  box-shadow: var(--diary-shadow);
+  line-height: 4;
+  padding-left: 24px;
+  font-weight: var(--diary-font-bold);
+  font-size: var(--diary-h3-font-size);
+}
+
+.maincalendar{
+  width: 100%;
 }
