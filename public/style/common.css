@@ -359,7 +359,7 @@
 #AdminMain .MainContent tbody tr:hover {
   background-color: #e2e2e2;
 }
-=======
+
   #root{
     width: 100%;
   }
@@ -394,6 +394,12 @@
   position: absolute;
   bottom: 60px;
   text-align: center;
+}
+.adminmainbuttonboxAD {
+  /* width: 100%; */
+  position: absolute;
+  left: 40px;
+  bottom: 60px;
 }
 
 .adminmainbutton{
