@@ -38,7 +38,7 @@ function MemberList() {
   return (
     <div className='menutitle'>
       <h3>회원목록</h3>
-      <div style={{backgroundColor: '#fff'}}>
+      <div style={{backgroundColor: '#fff', minWidth: "850px", maxWidth: "950px"}}>
       <input
         type="text"
         placeholder="이름 검색"

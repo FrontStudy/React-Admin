@@ -8,14 +8,14 @@ import Login from './screen/login.js';
 import Adminmain from './screen/admin/Adminmain.js';
 import Mydiarypage from './screen/diary/Mydiarypage';
 import Mymemberinformation from './screen/diary/Mymemberinformation.js';
+import MemberList from './screen/admin/MemberList.js';
 
 function App() {
   return (
       <Routes>
         <Route path="/calendar" element={<Diarymain />} />
         <Route path="/diary/:date" element={<DiaryEntry />} />
-        <Route path="/Diarymain" element={<Diarymain />} /> 
-        <Route path="/Adminmain" element={<Adminmain />} /> 
+        <Route path="/Adminmain/*" element={<Adminmain />} /> 
         <Route path="/" element={<Login />} /> 
 
         <Route

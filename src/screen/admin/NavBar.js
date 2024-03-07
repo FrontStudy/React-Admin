@@ -1,7 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 function NavBar() {
+  const navigate = useNavigate();
+  const goToAdminPage = () => {
+
+    navigate('/Diarymain');
+  };
+
   return (
     <nav className="NavBar">
       <div className="NavBar-header">
@@ -18,8 +24,13 @@ function NavBar() {
             회원게시글
           </NavLink>
         </li>
-        {/* Add more links as needed */}
       </ul>
+      <div className= 'adminmainbuttonboxAD'>
+        <button onClick={goToAdminPage} className='adminmainbutton'>
+            서비스 페이지
+        </button>
+        </div>
+
     </nav>
   );
 }
