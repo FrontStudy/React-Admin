@@ -26,10 +26,10 @@ export function servicesGetData(url, reqData) {
       .catch((error) => {
         console.log("error", error);
         if (error.message === "Request failed with status code 403") {
-          servicesUseToast(
-            "로그인 정보가 만료되었습니다. 다시 로그인해주십시오.",
-            "e"
-          );
+          // servicesUseToast(
+          //   "로그인 정보가 만료되었습니다. 다시 로그인해주십시오.",
+          //   "e"
+          // );
           setTimeout(() => {
             document.location.href = "/login";
           }, 2000);
