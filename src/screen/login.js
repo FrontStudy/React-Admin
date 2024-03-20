@@ -32,14 +32,16 @@ export default function Login() {
       )
       .then((res) => {
         console.log("로그인 됨");
+        const RES = res.data;
+        if (RES.status === "success") {
+          servicesSetStorage(STR.TOKEN, RES.token); 
+
           setTimeout(() => {
             navigate("/Diarymain");
             window.location.reload();
           }, 1000);
-        const RES = res.data;
-        if (RES.status === "fail") {
+        } else {
           console.log("fail");
-          return;
         }
         if (RES.status === "success") {
           console.log("success");
