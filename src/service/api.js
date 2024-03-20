@@ -1,7 +1,7 @@
 import axios from "axios";
 import { TOKEN } from "./string";
 import { servicesGetStorage, servicesSetStorage } from "./storage";
-
+import * as TOA from "./toast";
 
 export { servicesGetStorage } from "./storage";
 const storageGetToken = servicesGetStorage(TOKEN);
@@ -25,15 +25,26 @@ export function servicesGetData(url, reqData) {
       .then((res) => res.data)
       .catch((error) => {
         console.log("error", error);
-        if (error.message === "Request failed with status code 403") {
-          // servicesUseToast(
-          //   "로그인 정보가 만료되었습니다. 다시 로그인해주십시오.",
-          //   "e"
-          // );
+        if (error.message === "code 403") {
           setTimeout(() => {
-            document.location.href = "/login";
+            document.location.href = "/";
           }, 2000);
         }
+      });
+  }
+
+  export function servicesPostData(url, reqData) {
+    console.log(storageGetToken);
+    return axios
+      .post(url, reqData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${storageGetToken}`,
+        },
+      })
+      .then((res) => res.data)
+      .catch((error) => {
+        console.log("error", error);
       });
   }
 

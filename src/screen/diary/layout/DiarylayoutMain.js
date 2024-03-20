@@ -8,9 +8,8 @@ console.log(nowTitle);
     <div id="diarywrap">
       <Diarynavigation />
       <div className="diarycontentWrap">
-        <Diaryheader />
+        <Diaryheader nowTitle={nowTitle} />
         <section className="containerWrap">
-          <h2>{nowTitle}</h2>
           <div className="contentBox">{component}</div>
         </section>
       </div>

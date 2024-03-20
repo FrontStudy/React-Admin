@@ -430,7 +430,7 @@
 }
 
 .diarycontentBox {
-  width: 75rem;
+  width: 100rem;
   height: auto;
 }
 
@@ -467,6 +467,119 @@
   font-size: var(--diary-h3-font-size);
 }
 
+.diarymain h2 {
+  font-size: var(--diary-h2-font-size);
+  font-weight: var(--diary-font-bold);
+  line-height: 3;
+  padding-left: 20px;
+}
+
+.diaryWiper {
+  height: 100%;
+  padding: 0 20px 30px;
+  width: 100%;
+  box-shadow: var(--diary-shadow);
+}
+
+.diaryWiper .SwiperSlide {
+  width: 20% !important;
+  border: 5px solid var(--diary-two-color);
+  border-radius: 20px;
+  height: 36rem;
+  padding: 20px;
+  margin-right: 20px !important;
+  background: #fff;
+}
+
 .maincalendar{
   width: 100%;
 }
+
+.fullCalendarbox {
+  margin-top: 3rem;
+}
+
+.diaryEntry-h2 {
+  font-size: var(--diary-h2-font-size);
+  font-weight: var(--diary-font-bold);
+  margin-bottom: 20px;
+}
+
+.diaryEntry-h2 span {
+  font-size: var(--diary-h2-font-size);
+  color: var(--diary-one-color);
+}
+
+.diaryEntry-contents {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 600px;
+}
+.diaryEntry-contents > div h2 {
+  font-weight: var(--diary-font-semibold);
+  font-size: var(--diary-h3-font-size);
+  line-height: 2;
+}
+.diaryEntry-check{
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+.diaryEntry-textarea {
+  margin: 10px;
+  padding: 10px;
+  background: var(--diary-two-color)
+}
+
+.diaryEntry-textarea textarea{
+  border: none;
+  background: none;
+}
+
+.diaryEntry-review {
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+.diaryEntry-review > div {
+  padding: 10px 0 0 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 60% 30%;
+}
+
+.diaryEntry-review > div ul li {
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+.diaryEntry-review > div textarea{
+  border: none;
+  background: var(--diary-five-color);
+  max-height: 190px;
+}
+
+.diaryEntry-button {
+  height: 30px;
+  text-align: right;
+  padding: 0 20px;
+}
+
+.diaryEntry-button button {
+  background-color: var(--diary-four-color);
+  border: none;
+  padding: 10px;
+  width: 100px;
+  color: #eee;
+  font-weight: var(--diary-font-semibold);
+  border-radius: var(--diary-border-radius);
+}
+
+
+
+
+

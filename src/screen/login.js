@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from 'react';
 import * as STR from "../../src/service/string";
-
+import * as ST from "../../src/service/storage";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -40,6 +40,11 @@ export default function Login() {
         if (RES.status === "fail") {
           console.log("fail");
           return;
+        }
+        if (RES.status === "success") {
+          console.log("success");
+          const accessToken = RES.data.jtoken;
+          ST.servicesSetStorage(STR.TOKEN, accessToken);
         }
       })
       .catch((error) => console.log("reducer login error", error));

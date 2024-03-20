@@ -35,7 +35,6 @@ function Mydiarypage() {
         );
     };
     
-    // You'll then need to set up a global event listener to handle clicks on delete buttons
     useEffect(() => {
         const handleGlobalClick = (e) => {
             if (e.target.matches('.delete-event-btn')) {
@@ -60,15 +59,15 @@ function Mydiarypage() {
     <div id='mydiary'>
       <div className='diarymain diarycontentBox'>
         <div className='maincalendar'>
-          <div>
+          <div className='fullCalendarbox'>
               <FullCalendar
               plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
               initialView="dayGridMonth"
               locale={koLocale}
               headerToolbar={{
-              start: 'prev,next today',
+              start: 'prev today',
               center: 'title',
-              end: 'dayGridMonth'
+              end: 'next'
               }}
               height="75vh"
               dateClick={dateClick}
