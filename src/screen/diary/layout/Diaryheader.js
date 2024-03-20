@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Diaryheader() {
+function Diaryheader({nowTitle}) {
   return (
     <div id='diaryheader'>
         <h2>
-          Diaryheader
+         {nowTitle}
         </h2>
     </div>
   );
