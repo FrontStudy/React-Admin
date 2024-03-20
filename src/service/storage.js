@@ -8,3 +8,4 @@ export function servicesSetStorage(name, data) {
   export function servicesRemoveStorage(name) {
     return localStorage.removeItem(name);
   }
+  

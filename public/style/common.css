@@ -265,7 +265,7 @@
   }
 
   #AdminMain .Sidebar {
-    width: 250px;
+    min-width: 250px;
     background-color: #f6f9ff; 
     color: #181818;
     padding-top: 20px; 
