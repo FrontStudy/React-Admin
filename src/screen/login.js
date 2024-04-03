@@ -34,7 +34,7 @@ export default function Login() {
         console.log("로그인 됨");
         const RES = res.data;
         if (RES.status === "success") {
-          servicesSetStorage(STR.TOKEN, RES.token); 
+          ST.servicesSetStorage(STR.TOKEN, RES.token); 
 
           setTimeout(() => {
             navigate("/Diarymain");

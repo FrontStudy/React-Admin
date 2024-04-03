@@ -2,7 +2,6 @@ import axios from "axios";
 import { servicesGetStorage, servicesSetStorage } from "./storage";
 import * as TOA from "./toast";
 import { TOKEN, urlSetAdminRole  } from "./string";
-import { servicesGetStorage, servicesSetStorage  } from "./storage";
 
 export { servicesGetStorage } from "./storage";
 const storageGetToken = servicesGetStorage(TOKEN);
@@ -35,7 +34,7 @@ export function servicesGetData(url, reqData) {
   }
 
   export function servicesPostData(url, reqData) {
-    console.log(storageGetToken);
+    // console.log(storageGetToken);
     return axios
       .post(url, reqData, {
         headers: {

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Pagination from '../../Components/Pagination';
-import { urlMemberList } from '../../service/string';
-import { servicesGetStorage } from '../../service/storage';
+import { servicesPostData } from '../../service/api'; // servicesGetStorage를 가져옵니다.
 
-import * as STR from '../../service/string'
-
+import * as STR from '../../service/string';
+import * as API from '../../service/api'
 function MemberList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,18 +17,22 @@ function MemberList() {
 
   const fetchMembers = async () => {
     try {
-      const response = await axios.get(STR.urlMemberList, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const data = await API.servicesPostData(STR.urlMemberList, {
+        offset: 0,
+        size: 10,
+        active: true
       });
-      setMembers(response.data.data); // 
+      if (data && data.status === "success") {
+        setMembers(data.data);
+      } else {
+        console.error('응답 데이터에 문제가 있습니다:', data);
+      }
     } catch (error) {
       console.error('회원 목록을 불러오는데 실패했습니다.', error);
     }
   };
 
-  const filteredMembers = members.filter(member =>
+  const filteredMembers = members && members.filter(member =>
     member.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -39,7 +42,7 @@ function MemberList() {
 
   // Slice the current page items
   const currentItems = filteredMembers.slice(indexOfFirstItem, indexOfLastItem);
-
+  
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
@@ -68,8 +71,8 @@ function MemberList() {
               <tr key={index}>
                 <td>{member.nickname}</td>
                 <td>{member.email}</td>
-                <td>{member.birthDate}</td>
-                <td>{member.posts}</td>
+                <td>{member.createdDate.split('T')[0]}</td>
+                <td>{member.diaryCount}</td>
                 <td>{member.comments}</td>
                 <td>{member.active ? '활성' : '비활성'}</td>
               </tr>

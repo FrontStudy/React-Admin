@@ -12,4 +12,7 @@ export const urlDiaryList = urlPrefix + "/svc/diaryList";
 export const urlCcreateDiary = urlPrefix + "/svc/diary";
 
 export const urlSetAdminRole = urlPrefix + "/svc/setAdminRole";
-export const urlMemberList = urlPrefix + "/pub/members"
+
+export const urlMemberList = urlPrefix + "/admin/memberList"
+
+export const urlMemberPost = urlPrefix + "/pub/diaryList"
