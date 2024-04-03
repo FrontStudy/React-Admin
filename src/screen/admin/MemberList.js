@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Pagination from '../../Components/Pagination';
-import { servicesPostData } from '../../service/api'; // servicesGetStorage를 가져옵니다.
-
+import { useNavigate } from 'react-router-dom';
 import * as STR from '../../service/string';
 import * as API from '../../service/api'
+
+
 function MemberList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
   const [members, setMembers] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     fetchMembers();
@@ -20,6 +21,7 @@ function MemberList() {
       const data = await API.servicesPostData(STR.urlMemberList, {
         offset: 0,
         size: 10,
+        memberId: "",
         active: true
       });
       if (data && data.status === "success") {
@@ -45,6 +47,10 @@ function MemberList() {
   
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
+  const handleRowClick = (memberId) => {
+    navigate(`/Adminmain/memberlist/${memberId}`); // 프로그래매틱 라우팅 실행
+  };
+
   return (
     <div className='menutitle'>
       <h3>회원목록</h3>
@@ -66,9 +72,9 @@ function MemberList() {
               <th>가입상태</th>
             </tr>
           </thead>
-          <tbody>
+        <tbody>
             {currentItems.map((member, index) => (
-              <tr key={index}>
+              <tr key={index} onClick={() => handleRowClick(member.id)} style={{cursor: 'pointer'}}>
                 <td>{member.nickname}</td>
                 <td>{member.email}</td>
                 <td>{member.createdDate.split('T')[0]}</td>
