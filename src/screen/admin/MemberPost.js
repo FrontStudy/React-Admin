@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Pagination from '../../Components/Pagination';
-import { urlMemberPost, urlMemberList } from '../../service/string';
-import { servicesGetStorage } from '../../service/storage';
+import { urlMemberPost } from '../../service/string';
 
 import * as STR from '../../service/string';
 import * as API from '../../service/api'
