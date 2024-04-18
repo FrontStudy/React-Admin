@@ -5,15 +5,17 @@ export const diarynavUrl = "/data/diarynav.json";
 const urlPrefix = "http://43.203.202.168:8080";
 
 
-export const urlLogin = urlPrefix + "/pub/login";
-export const urlMembers = urlPrefix + "/pub/members";
+export const urlSetAdminRole = urlPrefix + "/svc/setAdminRole";
 
+export const urlLogin = urlPrefix + "/pub/login";
+
+// 서비스페이지
 export const urlDiaryList = urlPrefix + "/svc/diaryList";
 export const urlCcreateDiary = urlPrefix + "/svc/diary";
 export const urlMeDiaryList = urlPrefix + "/svc/me/diaryList";
 
-export const urlSetAdminRole = urlPrefix + "/svc/setAdminRole";
-
-export const urlMemberList = urlPrefix + "/admin/memberList"
-
-export const urlMemberPost = urlPrefix + "/pub/diaryList"
+// 어드민페이지
+export const urlMembers = urlPrefix + "/pub/members";
+export const urlMemberPost = urlPrefix + "/pub/diaryList";
+export const urlMemberList = urlPrefix + "/admin/memberList";
+export const urlAdminMemberGet = urlPrefix + "/pub/members";

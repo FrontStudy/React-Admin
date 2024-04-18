@@ -569,6 +569,45 @@
 .MeDiaryListLi{
   padding: 1.25rem;
   width: 20%;
+/* 회원 상세페이지  */
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.container h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.UserDetailTitle {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.UserDetail_info-box {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.UserDetail_info-box .label {
+  font-weight: bold;
+}
+.info-box:last-child {
+  border-bottom: none;
+}
+
+.UserDetailTitle div label {
+  font-weight: bold;
+}
+
+.value {
+  margin-left: 8px;
 }
 
 .MeDiaryList div{
