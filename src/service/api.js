@@ -13,15 +13,13 @@ export function servicesGetData(url, reqData) {
     if (storageGetToken) {
       headers.Authorization = `Bearer ${storageGetToken}`;
     }
-  
-    return axios(
-      {
-        url: url,
-        method: "get",
-        data: reqData,
-      },
-      { headers }
-    )
+
+    return axios({
+      url: url,
+      method: "get",
+      params: reqData,
+      headers: headers 
+    })
       .then((res) => res.data)
       .catch((error) => {
         console.log("error", error);
@@ -34,7 +32,6 @@ export function servicesGetData(url, reqData) {
   }
 
   export function servicesPostData(url, reqData) {
-    // console.log(storageGetToken);
     return axios
       .post(url, reqData, {
         headers: {

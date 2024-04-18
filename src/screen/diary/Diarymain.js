@@ -4,7 +4,7 @@ import 'swiper/css';
 function Diarymain() {
     
     return (
-        <div className='diarymain diarycontentBox' style={{"background":"var(--diary-five-color)"}}>
+        <div className='diarymain diarycontentBox'>
           <h2>어떤 하루를 보냈나요?</h2>
           <div className='diaryWiper'>
             <Swiper

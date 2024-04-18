@@ -12,6 +12,7 @@ export const urlLogin = urlPrefix + "/pub/login";
 // 서비스페이지
 export const urlDiaryList = urlPrefix + "/svc/diaryList";
 export const urlCcreateDiary = urlPrefix + "/svc/diary";
+export const urlMeDiaryList = urlPrefix + "/svc/me/diaryList";
 
 // 어드민페이지
 export const urlMembers = urlPrefix + "/pub/members";
