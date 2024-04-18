@@ -409,9 +409,10 @@
   line-height: 2;
   padding: 0.5rem;
   width: 10rem;
-  background: var(--diary-two-color);
+  background: #FF4B2B;
   border-radius: var(--diary-border-radius);
   font-weight: var(--diary-font-bold);
+  color: #fff;
 }
 
 #diarywrap {
@@ -430,13 +431,14 @@
 }
 
 .diarycontentBox {
-  width: 100rem;
+  width: auto;
   height: auto;
 }
 
 .diarynav{
   position: relative;
-  background: var(--diary-five-color);
+  background: #ff4b2b19;
+  box-shadow: var(--diary-shadow);
 }
 
 .diarylogo {
@@ -475,7 +477,7 @@
 }
 
 .diaryWiper {
-  height: 100%;
+  height: 340px;
   padding: 0 20px 30px;
   width: 100%;
   box-shadow: var(--diary-shadow);
@@ -483,20 +485,21 @@
 
 .diaryWiper .SwiperSlide {
   width: 20% !important;
-  border: 5px solid var(--diary-two-color);
   border-radius: 20px;
-  height: 36rem;
+  height: 300px;
   padding: 20px;
   margin-right: 20px !important;
   background: #fff;
-}
-
-.maincalendar{
-  width: 100%;
+  box-shadow: var(--diary-shadow);
+  margin: 20px 0;
 }
 
 .fullCalendarbox {
   margin-top: 3rem;
+}
+
+.diaryEntry{
+  margin: 0 auto;
 }
 
 .diaryEntry-h2 {
@@ -510,27 +513,27 @@
   color: var(--diary-one-color);
 }
 
-.diaryEntry-contents {
-  display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 600px;
-}
 .diaryEntry-contents > div h2 {
   font-weight: var(--diary-font-semibold);
   font-size: var(--diary-h3-font-size);
   line-height: 2;
 }
-.diaryEntry-check{
-  width: 90%;
-  margin: 10px;
-  padding: 10px;
-  background: #fff;
-}
 
 .diaryEntry-textarea {
   margin: 10px;
   padding: 10px;
-  background: var(--diary-two-color)
+  width: 300px;
+}
+
+.diaryEntry-textarea div:nth-child(1) {
+  height: 60px;
+  box-shadow: var(--diary-shadow);
+  margin-bottom: 20px;
+}
+
+.diaryEntry-textarea div:nth-child(2) {
+  height: 160px;
+  box-shadow: var(--diary-shadow);
 }
 
 .diaryEntry-textarea textarea{
@@ -538,39 +541,15 @@
   background: none;
 }
 
-.diaryEntry-review {
-  width: 90%;
-  margin: 10px;
-  padding: 10px;
-  background: #fff;
-}
-
-.diaryEntry-review > div {
-  padding: 10px 0 0 0;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 60% 30%;
-}
-
-.diaryEntry-review > div ul li {
-  line-height: 1.8;
-  font-weight: 600;
-}
-
-.diaryEntry-review > div textarea{
-  border: none;
-  background: var(--diary-five-color);
-  max-height: 190px;
-}
-
 .diaryEntry-button {
   height: 30px;
   text-align: right;
   padding: 0 20px;
+  width: 300px;
 }
 
 .diaryEntry-button button {
-  background-color: var(--diary-four-color);
+  background-color: #FF4B2B;
   border: none;
   padding: 10px;
   width: 100px;
@@ -579,7 +558,57 @@
   border-radius: var(--diary-border-radius);
 }
 
+.MeDiaryListBox{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.MeDiaryListLi{
+  padding: 1.25rem;
+  width: 20%;
+}
 
+.MeDiaryList div{
+  height: 16rem;
+  width: 100%;
+  box-shadow: var(--diary-shadow);
+  border-radius: var(--diary-border-radius);
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 30px;
+}
 
+.maincalendar {
+  display: flex;
+  flex-direction: column;
+}
+.maincalendar-button {
+  height: 36px;
+  text-align: right;
+}
+.maincalendar button{
+  width: 150px;
+  height: 30px;
+  margin: 3px 0;
+  border-radius: var(--diary-border-radius);
+  border: none;
+  background-color: #FF4B2B;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.MeDiaryList-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.MeDiaryList-content {
+  font-size: 16px;
+  font-weight: bold;
+}

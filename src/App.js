@@ -9,7 +9,6 @@ import Adminmain from './screen/admin/Adminmain.js';
 import Mydiarypage from './screen/diary/Mydiarypage';
 import Mymemberinformation from './screen/diary/Mymemberinformation.js';
 import MemberList from './screen/admin/MemberList.js';
-import DiaryList from './screen/diary/DiaryList.js';
 
 function App() {
   return (
@@ -44,13 +43,6 @@ function App() {
           element={<DiarylayoutMain 
             nowTitle="오늘의 일기장" 
             component={<DiaryEntry />}/>
-          }
-        />
-        <Route
-          path="/DiaryList"
-          element={<DiarylayoutMain 
-            nowTitle="나의 일기 목록" 
-            component={<DiaryList />}/>
           }
         />
       </Routes>

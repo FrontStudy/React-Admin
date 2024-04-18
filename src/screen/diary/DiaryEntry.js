@@ -12,11 +12,18 @@ function DiaryEntry() {
     const { 
         register, 
         handleSubmit, 
-        getValues,
-        formState: { errors } } 
-        = useForm();
-
+        getValues, 
+        formState: { errors } } = useForm({
+            defaultValues: {
+            _title: "", 
+            _content: "" 
+            }
+    });
+    const navigate = useNavigate();
     const fnSubmit = (e) => {
+         // "_title" 및 "_content" 필드의 값 콘솔에 출력
+        console.log("Title:", getValues("_title"));
+        console.log("Content:", getValues("_content"));
         API.servicesPostData(STR.urlCcreateDiary, {
             title: getValues("_title"),
             content: getValues("_content"),
@@ -24,6 +31,7 @@ function DiaryEntry() {
           })
         .then((res) => {
             console.log(res.data);
+            navigate('/Mydiarypage');
         })
         .catch(() =>
             console.error("오류")
@@ -35,40 +43,22 @@ function DiaryEntry() {
         <form style={{ flex: 1, marginRight: '10px' }} onSubmit={handleSubmit(fnSubmit)}>
             <h2 className='diaryEntry-h2'>오늘은 입니다.</h2>
             <div className='diaryEntry-contents'>
-                <div className='diaryEntry-check'>
-                    <h2>체크리스트</h2>
-                </div>
                 <div className='diaryEntry-textarea' >
                 <div>
                     <textarea
                     {...register("_title")}
                     id="title"
-                    name="title"
                     />
-                    {errors.title && <p>Title is required.</p>}
+                    {/* {errors._title && <p>Title is required.</p>} */}
                 </div>
                 <div>
                     <textarea
                         style={{ width: '100%', height: '100%' }}
                         {...register("_content")}
                         id="content"
-                        name="content"
-                    >
-                    {errors.content && <p>Content is required.</p>}
-                    </textarea>
+                    />
+                    {/* {errors._content && <p>Content is required.</p>} */}
                 </div>
-                </div>
-                <div className='diaryEntry-review'>
-                    <h2>친구들을 한마디</h2>
-                    <div>
-                        <ul>
-                            <li>리뷰 목록1</li>
-                            <li>리뷰 목록2</li>
-                        </ul>
-                        <textarea
-                            style={{ width: '100%' }}
-                        ></textarea>
-                    </div>
                 </div>
             </div>
             <div className='diaryEntry-button'>
