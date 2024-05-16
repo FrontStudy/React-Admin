@@ -5,7 +5,7 @@ import SignupForm from '../Components/SignupForm';
 
 export default function Login() {
   const navigate = useNavigate();
-  const [activeForm, setActiveForm] = useState('signup');
+  const [activeForm, setActiveForm] = useState('login');
 
   const handleToggle = (formType) => {
     setActiveForm(formType);

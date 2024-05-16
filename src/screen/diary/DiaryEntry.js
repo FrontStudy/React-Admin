@@ -27,7 +27,8 @@ function DiaryEntry() {
         API.servicesPostData(STR.urlCcreateDiary, {
             title: getValues("_title"),
             content: getValues("_content"),
-            accessLevel: "public"
+            accessLevel: "public",
+            imgUrl : "",
           })
         .then((res) => {
             console.log(res.data);

@@ -10,36 +10,10 @@ import * as TOA from "../../service/toast";
 function Mydiarypage() {
 
     const dateClick = (info) => {
-        navigate(`/diary/${info.dateStr}`);
+        navigate(`/diary/DiaryEntry`);
     };
 
     const navigate = useNavigate();
-
-    //   const [diaryList, setDiaryList] = useState([]); 
-
-    //   function fetchMeDiaryList(offset = 0, size = 20) {
-    //     API.servicesGetData(STR.urlMeDiaryList, {
-    //       params: {
-    //         offset: offset,
-    //         size: size,
-    //       },
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-  
-    //     })
-    //     .then((res) => {
-    //       console.log(res.data);
-    //     //   setDiaryList(res.data.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching diary list:", error);
-    //     });
-    //   }
-    
-    //   useEffect(() => {
-    //     fetchMeDiaryList();
-    //   }, []);
 
     const [currentPage, setCurrentPage] = useState(1);
     const [diaryList, setDiaryList] = useState([]); 
@@ -52,7 +26,7 @@ function Mydiarypage() {
       try {
         const data = await API.servicesGetData(STR.urlMeDiaryList, {
           offset: 0,
-          size: 100
+          size: 20
         });
         if (data) {
             setDiaryList(data.data);
