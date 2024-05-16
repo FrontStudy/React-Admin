@@ -14,10 +14,12 @@ export const urlDiaryList = urlPrefix + "/svc/diaryList";
 export const urlCcreateDiary = urlPrefix + "/svc/diary";
 export const urlMeDiaryList = urlPrefix + "/svc/me/diaryList";
 export const urlAddMembers = urlPrefix + "/pub/members ";
-
+export const urlComment = urlPrefix + "/pub/diary/{diaryId}/comment"
+export const urlAddMembers = urlPrefix + "/pub/members";
 
 // 어드민페이지
 export const urlMembers = urlPrefix + "/pub/members";
 export const urlMemberPost = urlPrefix + "/pub/diaryList";
 export const urlMemberList = urlPrefix + "/admin/memberList";
 export const urlAdminMemberGet = urlPrefix + "/pub/members";
+export const urlDiaryListAdmin = urlPrefix + "/admin/diaryList"

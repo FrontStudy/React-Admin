@@ -10,10 +10,16 @@ function NavBar() {
 
   return (
     <nav className="NavBar">
-      <div className="NavBar-header">
-        <h2>관리자메뉴</h2>
+      <div className="diarylogo">
+        <h2>Exchange Diary</h2>
+
       </div>
       <ul className="NavBar-menu">
+        <li>
+          <NavLink to="/Adminmain" className={({ isActive}) => isActive ? 'active' : ''}>
+          Dashboard
+          </NavLink>
+        </li>
         <li>
           <NavLink to="memberlist" className={({ isActive }) => isActive ? 'active' : ''}>
             회원목록

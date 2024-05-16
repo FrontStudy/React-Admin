@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Pagination from '../../Components/Pagination';
 import { urlMemberPost } from '../../service/string';
+import { useNavigate } from 'react-router-dom';
 
 import * as STR from '../../service/string';
 import * as API from '../../service/api'
@@ -13,6 +14,7 @@ function MemberPost() {
   const [members, setMembers] = useState({});
   const [totalItems, setTotalItems] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     fetchPosts();
@@ -23,6 +25,10 @@ function MemberPost() {
     fetchPosts();
     fetchMembers();
   }, [currentPage]);
+
+  const handleRowClick = (postId) => {
+    navigate(`/Adminmain/memberpost/${postId}`); // 프로그래매틱 라우팅 실행
+  };
 
   const fetchPosts = async () => {
     // currentPage가 1일 때 offset을 0으로, 2일 때 1로 설정
@@ -55,7 +61,12 @@ function MemberPost() {
         active: true
       });
       if (data && data.status === "success") {
-        setMembers(data.data);
+        // 회원 배열을 객체로 변환
+        const membersMap = data.data.reduce((acc, member) => {
+          acc[member.id] = member;
+          return acc;
+        }, {});
+        setMembers(membersMap);
       } else {
         console.error('응답 데이터에 문제가 있습니다:', data);
       }
@@ -83,14 +94,12 @@ function MemberPost() {
             </tr>
           </thead>
           <tbody>
-            {posts.map((post, index) => (
-              <tr key={index}>
+            {posts && posts.map((post, index) => (
+              <tr key={index} onClick={() => handleRowClick(post.id)} style={{cursor: 'pointer'}}>
                 <td>{post.id}</td>
                 <td>{post.title}</td>
                 <td>{members[post.memberId] ? members[post.memberId].nickname : '알 수 없음'}</td>
                 <td>{post.createdDate.split('T')[0]}</td>
-                {/* <td>게시내용</td> */}
-                {/* <td>{post.modifiedDate.split('T')[0]}</td> */}
                 <td>{post.accessLevel === 'public' ? '공개' : '비공개'}</td>
                 <td>{post.active ? '정상' : '탈퇴'}</td>
               </tr>
