@@ -4,6 +4,8 @@ import NavBar from './NavBar';
 import MemberList from './MemberList';
 import MemberPost from './MemberPost';
 import MemberListDetail from './MemberListDetail';
+import MemberPostDetail from './MemberPostDetail';
+import Dashboard from './Dashborad';
 
 function Adminmain() {
   return (
@@ -13,10 +15,12 @@ function Adminmain() {
       </div>
       <div className="MainContent">
         <Routes>
-          <Route path="memberlist" element={<MemberList />} /> {/* Remove the leading slash */}
-          <Route path="memberpost" element={<MemberPost />} /> {/* Remove the leading slash */}
+          <Route path="/" element={<Dashboard />} /> 
+          <Route path="memberlist" element={<MemberList />} /> 
+          <Route path="memberpost" element={<MemberPost />} /> 
           <Route path="memberlist/:memberId" element={<MemberListDetail />} />
-          <Route path="*" element={<Navigate replace to="memberlist" />} /> {/* Use relative path */}
+          <Route path="memberpost/:postId" element={<MemberPostDetail />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
       </div>
     </div>
