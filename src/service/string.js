@@ -13,6 +13,7 @@ export const urlLogin = urlPrefix + "/pub/login";
 export const urlDiaryList = urlPrefix + "/svc/diaryList";
 export const urlCcreateDiary = urlPrefix + "/svc/diary";
 export const urlMeDiaryList = urlPrefix + "/svc/me/diaryList";
+export const urlAddMembers = urlPrefix + "/pub/members ";
 export const urlComment = urlPrefix + "/pub/diary/{diaryId}/comment"
 export const urlAddMembers = urlPrefix + "/pub/members";
 
