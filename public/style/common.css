@@ -13,6 +13,10 @@
     margin: -20px 0 50px;
   }
 
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   #Login {
     display: flex;
     justify-content: center;
@@ -258,6 +262,9 @@
     background-color: #f6f9ff;
   }
   
+  #AdminMain .menutitle {
+    padding: 30px;
+  }
   #AdminMain .MainContent .menutitle h3 {
     font-size: 30px;
     font-weight: bold;
@@ -265,17 +272,17 @@
   }
 
   #AdminMain .Sidebar {
-    min-width: 250px;
+    min-width: 230px;
     background-color: #f6f9ff; 
     color: #181818;
-    padding-top: 20px; 
+    /* padding-top: 20px;  */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
   
   #AdminMain .MainContent {
     flex-grow: 1;
     /* background-color: #ecf0f1;  */
-    padding: 20px; 
+    /* padding: 20px;  */
   }
   
   #AdminMain .SidebarMenu ul {
@@ -364,6 +371,45 @@
     width: 100%;
   }
 
+  /* 관리자페이지 게시글 부트스트랩*/
+
+  .custom-container {
+    padding: 2rem;
+  }
+  
+  .custom-box {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
+  .custom-box span {
+    margin: 20px 10px;
+  }
+  .custom-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .custom-content {
+    margin-bottom: 1rem;
+  }
+  
+  .custom-comments {
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+  }
+  
+  .custom-comment {
+    margin-top: 0.5rem;
+  }
+  
+  .custom-date {
+    font-size: 0.875rem;
+    color: #666;
+  }
+
   :root{
 
     --diary-one-color: #F1C40F;
@@ -398,8 +444,8 @@
 .adminmainbuttonboxAD {
   /* width: 100%; */
   position: absolute;
-  left: 40px;
-  bottom: 60px;
+  left: 35px;
+  bottom: 34px;
 }
 
 .adminmainbutton{
@@ -447,7 +493,9 @@
   line-height: 3;
   text-align: center;
 }
-
+.diarylogo span{
+  line-height: 0;
+}
 .diarynav li {
   line-height: 3;
   padding-left: 1.65rem;
@@ -579,6 +627,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
+  overflow: hidden;
 }
 
 .container h1 {
@@ -651,4 +700,38 @@
 .MeDiaryList-content {
   font-size: 16px;
   font-weight: bold;
+}
+
+/* 메인 대쉬보드 */
+
+.dashborad_main {
+  background-color: #f0f0f0;
+  padding: 30px;
+  font-size: 26px;
+}
+
+.dashborad_main {
+  text-align: center;  /* 대시보드 제목 가운데 정렬 */
+}
+
+.dashboard-stats {
+  display: flex;        /* 가로 나열을 위해 flex 디스플레이 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  gap: 20px;             /* 항목 사이의 간격 설정 */
+  list-style: none;      /* 기본 목록 스타일 제거 */
+  padding-top: 20px;            /* 기본 패딩 제거 */
+}
+.dashboard-stats-list{
+  display: flex;
+  flex-direction: column;
+  padding: 5% 5%;
+  align-items: flex-start;
+}
+.dashboard-stats-list div {
+  font-size: 50px;
+}
+
+.dashboard-graph {
+  padding: 0 10px;
+  overflow: hidden;
 }
