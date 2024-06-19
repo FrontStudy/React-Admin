@@ -28,7 +28,8 @@ function Mydiarypage() {
           offset: 0,
           size: 20
         });
-        if (data) {
+        if (data && data.data) {
+          console.log("data: "+data.data);
             setDiaryList(data.data);
         } else {
           console.error('응답 데이터에 문제가 있습니다:', data);
