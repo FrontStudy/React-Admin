@@ -15,11 +15,13 @@ function DiaryEntry() {
         getValues, 
         formState: { errors } } = useForm({
             defaultValues: {
-            _title: "", 
-            _content: "" 
+                _title: "", 
+                _content: "",
             }
     });
     const navigate = useNavigate();
+    const [accessLevel, setAccessLevel] = useState("public");
+
     const fnSubmit = (e) => {
          // "_title" 및 "_content" 필드의 값 콘솔에 출력
         console.log("Title:", getValues("_title"));
@@ -27,7 +29,7 @@ function DiaryEntry() {
         API.servicesPostData(STR.urlCcreateDiary, {
             title: getValues("_title"),
             content: getValues("_content"),
-            accessLevel: "public",
+            accessLevel: accessLevel,
             imgUrl : "",
           })
         .then((res) => {
@@ -45,23 +47,43 @@ function DiaryEntry() {
             <h2 className='diaryEntry-h2'>오늘은 입니다.</h2>
             <div className='diaryEntry-contents'>
                 <div className='diaryEntry-textarea' >
-                <div>
-                    <textarea
-                    {...register("_title")}
-                    id="title"
-                    />
-                    {/* {errors._title && <p>Title is required.</p>} */}
+                    <div>
+                        <textarea
+                        {...register("_title")}
+                        id="title"
+                        />
+                        {/* {errors._title && <p>Title is required.</p>} */}
+                    </div>
+                    <div>
+                        <textarea
+                            style={{ width: '100%', height: '100%' }}
+                            {...register("_content")}
+                            id="content"
+                        />
+                        {/* {errors._content && <p>Content is required.</p>} */}
+                    </div>
                 </div>
-                <div>
-                    <textarea
-                        style={{ width: '100%', height: '100%' }}
-                        {...register("_content")}
-                        id="content"
-                    />
-                    {/* {errors._content && <p>Content is required.</p>} */}
                 </div>
+                <div className='diaryEntry-accessLevel'>
+                    <label>
+                        <input 
+                            type="radio" 
+                            value="public" 
+                            checked={accessLevel === "public"} 
+                            onChange={() => setAccessLevel("public")}
+                        />
+                        Public
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            value="private" 
+                            checked={accessLevel === "private"} 
+                            onChange={() => setAccessLevel("private")}
+                        />
+                        Private
+                    </label>
                 </div>
-            </div>
             <div className='diaryEntry-button'>
                 <button type="submit">저장</button>
             </div>
