@@ -26,7 +26,7 @@ function Diarymain() {
     };
 
     useEffect(() => {
-        fetchPosts();
+    fetchPosts();
     }, []);
 
     return (
