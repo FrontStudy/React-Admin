@@ -17,6 +17,8 @@ export const urlAddMembers = urlPrefix + "/pub/members ";
 export const urlComment = urlPrefix + "/pub/diary/{diaryId}/comment"
 export const urlDiaryDetail = urlPrefix + "/svc/diaryDetail"
 export const urlDiaryEdit = urlPrefix + "/svc/diary"
+export const urlDetailInfo = urlPrefix + "/svc/member/me/detailInfo"
+export const urlUpdateUserNickname = (memberId) => `${urlPrefix}/svc/members/${memberId}`;
 
 // 어드민페이지
 export const urlMembers = urlPrefix + "/pub/members";
