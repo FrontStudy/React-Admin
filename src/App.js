@@ -10,6 +10,8 @@ import Adminmain from './screen/admin/Adminmain.js';
 import Mydiarypage from './screen/diary/Mydiarypage';
 import Mymemberinformation from './screen/diary/Mymemberinformation.js';
 import MemberList from './screen/admin/MemberList.js';
+import MydiarypageDetail from './screen/diary/MydiarypageDetail.js';
+import DiaryEdit from './screen/diary/DiaryEdit.js';
 
 function App() {
   return (
@@ -45,6 +47,20 @@ function App() {
             nowTitle="오늘의 일기장" 
             component={<DiaryEntry />}/>
           }
+        />
+        <Route 
+          path="/diary/MydiarypageDetail/:diaryId" 
+          element={<DiarylayoutMain 
+            nowTitle="일기 상세정보" 
+            component={<MydiarypageDetail />}/>
+          }
+        />
+        <Route 
+          path="/diary/DiaryEdit/:diaryId" 
+          element={<DiarylayoutMain 
+            nowTitle="일기 수정하기" 
+            component={<DiaryEdit />}/>
+        }
         />
       </Routes>
   );

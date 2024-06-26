@@ -29,7 +29,6 @@ function Mydiarypage() {
           size: 20
         });
         if (data && data.data) {
-          console.log("data: "+data.data);
             setDiaryList(data.data);
         } else {
           console.error('응답 데이터에 문제가 있습니다:', data);
@@ -39,6 +38,10 @@ function Mydiarypage() {
       }
     };
     
+    const handleDiaryClick = (diaryId) => {
+      navigate(`/diary/MydiarypageDetail/${diaryId}`);
+  };
+
   return (
     <div id='mydiary'>
       <div className='diarymain diarycontentBox'>
@@ -52,7 +55,7 @@ function Mydiarypage() {
                 {diaryList.map((diary, index) => (
                   (diary.title && diary.content) && ( 
                     <li key={index} className='MeDiaryListLi'>
-                      <a className='MeDiaryList'>
+                      <a className='MeDiaryList' onClick={() => handleDiaryClick(diary.id)}>
                         <div>
                           <p className='MeDiaryList-title'>{diary.title}</p>
                           <p className='MeDiaryList-content'>{diary.content}</p>
