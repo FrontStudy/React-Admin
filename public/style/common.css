@@ -527,43 +527,35 @@
 .diaryWiper {
   height: 340px;
   padding: 0 20px 30px;
-  width: 1200px;
-  box-shadow: var(--diary-shadow);
-  display: flex;
-  justify-content: center;
-}
-
-.swiper {
-  max-width: 1100px;
   width: 100%;
-  margin: 0 auto; /* Center align */
+  box-shadow: var(--diary-shadow);
 }
 
-.SwiperSlide {
-  width: 200px !important; /* Fixed width for the slides */
-  height: 300px; /* Fixed height for the slides */
+.diaryWiper .SwiperSlide {
+  width: 15% !important;
   border-radius: 20px;
+  height: 300px;
   padding: 20px;
-  margin-right: 10px !important;
+  margin-right: 20px !important;
   background: #fff;
   box-shadow: var(--diary-shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 20px 0;
 }
 
 .SwiperSlide h3 {
-  font-size: 18px; /* Fixed font size */
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .SwiperSlide p {
-  flex-grow: 1;
-  font-size: 14px; /* Fixed font size */
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .SwiperSlide small {
-  font-size: 12px; /* Fixed font size */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .fullCalendarbox {
