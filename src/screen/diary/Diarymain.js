@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import axios from 'axios';
 import { urlMemberPost } from '../../service/string'; // Adjust the path based on your project structureimport './styles.css'; // Adjust the path based on your project structure
 
 function Diarymain() {
     const [posts, setPosts] = useState([]);
-    const itemsPerPage = 10;
-
+    const navigate = useNavigate();
     const fetchPosts = async () => {
         try {
             const response = await axios.get(urlMemberPost, {
                 params: {
                     offset: 0,
-                    size: itemsPerPage,
+                    size: 50,
                 },
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,24 +29,29 @@ function Diarymain() {
     fetchPosts();
     }, []);
 
+    const handlePostClick = (postId) => {
+        navigate(`/diary/SharedDiarypageDetail/${postId}`);
+    };
+
     return (
         <div className='diarymain diarycontentBox'>
             <h2>어떤 하루를 보냈나요?</h2>
-            <div className='diaryWiper'>
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={5}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
+            <div>
+                <ul className='MeDiaryListBox'>
                     {posts.map(post => (
-                        <SwiperSlide key={post.id} className='SwiperSlide' style={{marginLeft: "10px", position: 'relative'}}>
-                            <h3>{post.title}</h3>
-                            <p>{post.content}</p>
-                            <small>{new Date(post.createdDate).toLocaleDateString()}</small>
-                        </SwiperSlide>
+                        (post.title && post.content) && (
+                            <li key={post.id} className='MeDiaryListLi'>
+                                <a className='MeDiaryList' onClick={() => handlePostClick(post.id)}>
+                                    <div>
+                                        <p className='MeDiaryList-title hidden-scrollbar'>{post.title}</p>
+                                        <p className='MeDiaryList-content hidden-scrollbar'>{post.content}</p>
+                                        <small>{new Date(post.createdDate).toLocaleDateString()}</small>
+                                    </div>
+                                </a>
+                            </li>
+                        )
                     ))}
-                </Swiper>
+                </ul>
             </div>
         </div>
     );

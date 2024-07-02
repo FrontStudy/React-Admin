@@ -12,6 +12,7 @@ import Mymemberinformation from './screen/diary/Mymemberinformation.js';
 import MemberList from './screen/admin/MemberList.js';
 import MydiarypageDetail from './screen/diary/MydiarypageDetail.js';
 import DiaryEdit from './screen/diary/DiaryEdit.js';
+import SharedDiarypageDetail from './screen/diary/SharedDiarypageDetail.js';
 
 function App() {
   return (
@@ -61,6 +62,13 @@ function App() {
             nowTitle="일기 수정하기" 
             component={<DiaryEdit />}/>
         }
+        />
+         <Route 
+          path="/diary/SharedDiarypageDetail/:diaryId" 
+          element={<DiarylayoutMain 
+            nowTitle="공유일기 상세정보" 
+            component={<SharedDiarypageDetail />}/>
+          }
         />
       </Routes>
   );
