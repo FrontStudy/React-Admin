@@ -434,7 +434,6 @@
   }
 
   :root{
-
     --diary-one-color: #F1C40F;
     --diary-two-color: #F9E493;
     --diary-three-color: #F2EFE4;
@@ -707,7 +706,20 @@
   background-color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 30px;
+  padding: 18px;
+}
+.MeDiaryList div p {
+  overflow: scroll;
+  white-space: pre-wrap; 
+}
+.MeDiaryList .hidden-scrollbar {
+  overflow: auto; /* 스크롤 기능은 유지 */
+  scrollbar-width: none; /* Firefox용 */
+  -ms-overflow-style: none; /* Internet Explorer 및 Edge Legacy용 */
+}
+
+.MeDiaryList .hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera용 */
 }
 
 .maincalendar {
@@ -773,4 +785,14 @@
 .dashboard-graph {
   padding: 0 10px;
   overflow: hidden;
+}
+
+.MeDiaryListLi a  {
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.MeDiaryListLi a :hover {
+  color: #1a73e8; 
+  text-decoration: none; 
 }
