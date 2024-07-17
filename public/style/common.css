@@ -584,8 +584,38 @@
   margin-top: 3rem;
 }
 
+.contentBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .diaryEntry{
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (min-width: 640px) {
+    .diaryEntry {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .diaryEntry {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .diaryEntry {
+        width: 50%;
+    }
 }
 
 .diaryEntry-h2 {
@@ -606,20 +636,19 @@
 }
 
 .diaryEntry-textarea {
-  margin: 10px;
-  padding: 10px;
-  width: 300px;
+  width: 100%;
 }
 
 .diaryEntry-textarea div:nth-child(1) {
-  height: 60px;
   box-shadow: var(--diary-shadow);
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .diaryEntry-textarea div:nth-child(2) {
-  height: 160px;
   box-shadow: var(--diary-shadow);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .diaryEntry-textarea textarea{
@@ -627,11 +656,37 @@
   background: none;
 }
 
+.diaryEntry-radio{
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.25 );
+}
+
+.diaryEntry-radioInput{
+  display: none;
+}
+
+.diaryEntry-radioLabel{
+  padding: 8px 14px;
+  font-size: 22px;
+  color: #FFFFFF;
+  background-color: #0056b3;
+  cursor: pointer;
+  transition: background 0.1s; 
+}
+
+.diaryEntry-radioLabel:not(:last-of-type){
+  border-right: 1px solid #006b56
+}
+
+.diaryEntry-radioInput:checked + .diaryEntry-radioLabel{
+  background: #006b56;
+}
+
+
 .diaryEntry-button {
-  height: 30px;
   text-align: right;
-  padding: 0 20px;
-  width: 300px;
 }
 
 .diaryEntry-button button {
