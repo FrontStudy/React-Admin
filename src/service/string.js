@@ -1,4 +1,5 @@
 export const TOKEN = "token";
+export const MEMBERID = "memberId";
 
 export const diarynavUrl = "/data/diarynav.json";
 
@@ -18,6 +19,8 @@ export const urlComment = urlPrefix + "/pub/diary/{diaryId}/comment"
 export const urlDiaryDetail = urlPrefix + "/svc/diaryDetail"
 export const urlDiaryEdit = urlPrefix + "/svc/diary"
 export const urlSharedDiaryDetail = urlPrefix + "/svc/diaryDetail"
+export const urlMemberIdByEmail = urlPrefix + "/pub/memberId"
+export const urlsetDiaryShares = (diaryId) => `${urlPrefix}/svc/diary/${diaryId}/shares`;
 
 export const urlDetailInfo = urlPrefix + "/svc/member/me/detailInfo"
 export const urlUpdateUserNickname = (memberId) => `${urlPrefix}/svc/members/${memberId}`;

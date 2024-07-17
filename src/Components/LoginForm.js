@@ -46,8 +46,11 @@ const navigate = useNavigate();
         }
         if (RES.status === "success") {
           console.log("success");
+          
           const accessToken = RES.data.jtoken;
+          const memberId = RES.data.id;
           ST.servicesSetStorage(STR.TOKEN, accessToken);
+          ST.servicesSetStorage(STR.MEMBERID, memberId);
         }
       })
       .catch((error) => console.log("reducer login error", error));
