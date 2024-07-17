@@ -1,7 +1,8 @@
 import axios from 'axios';
 import * as STR from '../../service/string';
 
-const fetchUserDetail = async (token) => {
+const fetchUserDetail = async () => {
+  const token = localStorage.getItem(STR.TOKEN); // Adjust according to where your token is stored
   try {
     const response = await axios.get(STR.urlDetailInfo, {
       headers: {

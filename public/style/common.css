@@ -534,10 +534,12 @@
 #diaryheader {
   height: 80px;
   box-shadow: var(--diary-shadow);
-  line-height: 4;
+  /* line-height: 4; */
   padding-left: 24px;
   font-weight: var(--diary-font-bold);
   font-size: var(--diary-h3-font-size);
+  display: flex;
+  align-items: center;
 }
 
 .diarymain h2 {
@@ -773,4 +775,80 @@
 .dashboard-graph {
   padding: 0 10px;
   overflow: hidden;
+}
+
+/* 마이 프로필 */
+
+.ProfileContainer {
+  height: 400px;
+  display: flex;
+}
+
+.ProfileImageContainer {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProfileDetails {
+  width: 50%;
+  height: 100%;
+}
+
+.ProfileInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ProfileInfoItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProfileStats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProfileContent {
+  height: 100%;
+}
+
+.Divider {
+  width: 100%;
+  height: 2px;
+  background: #333333;
+}
+
+.ProfileTabs {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.TabButton {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.PostsContainer {
+  margin-top: 5%;
+}
+
+.PostsList {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.PostItem {
+  width: 150px;
+  height: 200px;
+  background-color: #aeaeae;
+  border-radius: 15px;
 }

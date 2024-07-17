@@ -12,6 +12,7 @@ import Mymemberinformation from './screen/diary/Mymemberinformation.js';
 import MemberList from './screen/admin/MemberList.js';
 import MydiarypageDetail from './screen/diary/MydiarypageDetail.js';
 import DiaryEdit from './screen/diary/DiaryEdit.js';
+import Myprofile from './screen/diary/Myprofile.js';
 
 function App() {
   return (
@@ -35,9 +36,16 @@ function App() {
           }
         />
         <Route
+          path="/Myprofile"
+          element={<DiarylayoutMain 
+            nowTitle="프로필" 
+            component={<Myprofile />}/>
+          }
+        />
+        <Route
           path="/Mymemberinformation"
           element={<DiarylayoutMain 
-            nowTitle="마이 페이지" 
+            nowTitle="프로필 편집" 
             component={<Mymemberinformation />}/>
           }
         />
