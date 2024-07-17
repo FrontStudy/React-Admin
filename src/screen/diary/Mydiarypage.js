@@ -9,7 +9,7 @@ import * as TOA from "../../service/toast";
 
 function Mydiarypage() {
 
-    const dateClick = (info) => {
+    const dateClick = (info) => { 
         navigate(`/diary/DiaryEntry`);
     };
 
@@ -57,8 +57,8 @@ function Mydiarypage() {
                     <li key={index} className='MeDiaryListLi'>
                       <a className='MeDiaryList' onClick={() => handleDiaryClick(diary.id)}>
                         <div>
-                          <p className='MeDiaryList-title'>{diary.title}</p>
-                          <p className='MeDiaryList-content'>{diary.content}</p>
+                          <p className='MeDiaryList-title hidden-scrollbar'>{diary.title}</p>
+                          <p className='MeDiaryList-content hidden-scrollbar'>{diary.content}</p>
                         </div>
                       </a>
                     </li>
