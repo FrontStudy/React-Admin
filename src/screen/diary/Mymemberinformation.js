@@ -3,7 +3,7 @@ import * as STR from '../../service/string';
 import fetchUserDetail from './fetchUserDetail'; // Adjust the path according to your folder structure
 import axios from 'axios';
 
-function Mymemberinformation() {
+function Mymemberinformation({ onClose }) {
   const [userInfo, setUserInfo] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedNickname, setEditedNickname] = useState('');
@@ -95,6 +95,7 @@ function Mymemberinformation() {
         {isEditing ? '취소' : '수정'}
       </button>
       {isEditing && <button onClick={handleSave}>저장</button>}
+      <button onClick={onClose}>닫기</button>
     </div>
   );
 }
