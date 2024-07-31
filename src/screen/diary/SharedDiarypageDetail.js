@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function SharedDiarypageDetail() {
   const { diaryId } = useParams();
   const [diary, setDiary] = useState(null);
+  const [comment, setComment] = useState('');
   const navigate = useNavigate();
   useEffect(() => {
     fetchDiaryEntry();
@@ -26,12 +27,13 @@ function SharedDiarypageDetail() {
     }
   };
 
-  const handleEditClick = () => {
-    navigate(``);
-  };
-
   const handleBackToListClick = () => {
     navigate(`/Diarymain`);
+  };
+
+  const handleCommentSubmit = () => {
+    // 댓글 제출 로직 추가
+    console.log('Comment submitted:', comment);
   };
 
   if (!diary) {
@@ -39,12 +41,22 @@ function SharedDiarypageDetail() {
   }
 
   return (
-    <div className='diary-entry'>
-      <h1>{diary.title}</h1>
-      <p>{diary.content}</p>
-      <p>{diary.date}</p>
-      <button onClick={handleEditClick}>수정하기</button>
-      <button onClick={handleBackToListClick}>목록으로 돌아가기</button>
+    <div className='diary-detail-container'>
+      <div className='diary-entry'>
+        <h1>{diary.title}</h1>
+        <p>{diary.content}</p>
+        <p>{diary.date}</p>
+        <button onClick={handleBackToListClick}>목록으로 돌아가기</button>
+      </div>
+      <div className='diary-comments'>
+        <h2>댓글</h2>
+        <textarea 
+          value={comment}
+          //onChange={handleCommentChange}
+          placeholder="댓글을 입력하세요"
+        />
+        <button onClick={handleCommentSubmit}>댓글 작성</button>
+       </div>
     </div>
   );
 }

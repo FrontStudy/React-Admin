@@ -25,7 +25,7 @@ function App() {
         <Route
           path="/Diarymain"
           element={<DiarylayoutMain 
-            nowTitle="홈" 
+            nowTitle="오늘의 일기장" 
             component={<Diarymain />}/>
           }
         />

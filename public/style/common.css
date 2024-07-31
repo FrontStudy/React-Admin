@@ -873,3 +873,20 @@
   color: #1a73e8; 
   text-decoration: none; 
 }
+
+.diary-detail-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.diary-entry {
+  width: 50%; /* 왼쪽 영역 */
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.diary-comments {
+  width: 50%; /* 오른쪽 영역 */
+  padding: 20px;
+}
