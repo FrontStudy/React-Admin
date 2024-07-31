@@ -13,7 +13,7 @@ export const urlLogin = urlPrefix + "/pub/login";
 export const urlDiaryList = urlPrefix + "/svc/diaryList";
 export const urlCcreateDiary = urlPrefix + "/svc/diary";
 export const urlMeDiaryList = urlPrefix + "/svc/me/diaryList";
-export const urlAddMembers = urlPrefix + "/pub/members ";
+export const urlAddMembers = urlPrefix + "/pub/members";
 export const urlComment = urlPrefix + "/pub/diary/{diaryId}/comment"
 export const urlDiaryDetail = urlPrefix + "/svc/diaryDetail"
 export const urlDiaryEdit = urlPrefix + "/svc/diary"
@@ -21,8 +21,8 @@ export const urlSharedDiaryDetail = urlPrefix + "/svc/diaryDetail"
 
 export const urlDetailInfo = urlPrefix + "/svc/member/me/detailInfo"
 export const urlUpdateUserNickname = (memberId) => `${urlPrefix}/svc/members/${memberId}`;
-
-
+export const urlAddComment = urlPrefix + "/svc/comment"
+export const urlGetComment = urlPrefix + "/svc/diary"
 
 // 어드민페이지
 export const urlMembers = urlPrefix + "/pub/members";

@@ -8,7 +8,7 @@ import * as STR from "../../service/string";
 import * as TOA from "../../service/toast";
 
 function Mydiarypage() {
-
+  
     const dateClick = (info) => { 
         navigate(`/diary/DiaryEntry`);
     };
