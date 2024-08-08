@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function MydiarypageDetail() {
   const { diaryId } = useParams();
   const [diary, setDiary] = useState(null);
+  
   const navigate = useNavigate();
   useEffect(() => {
     fetchDiaryEntry();
@@ -39,12 +40,14 @@ function MydiarypageDetail() {
   }
 
   return (
-    <div className='diary-entry'>
-      <h1>{diary.title}</h1>
-      <p>{diary.content}</p>
-      <p>{diary.date}</p>
-      <button onClick={handleEditClick}>수정하기</button>
-      <button onClick={handleBackToListClick}>목록으로 돌아가기</button>
+    <div className='diary-detail-container'>
+      <div className='diary-entry'>
+        <h1>{diary.title}</h1>
+        <p>{diary.content}</p>
+        <p>{diary.date}</p>
+        <button onClick={handleEditClick}>수정하기</button>
+        <button onClick={handleBackToListClick}>목록으로 돌아가기</button>
+      </div>
     </div>
   );
 }
