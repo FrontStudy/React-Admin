@@ -59,3 +59,17 @@ export function servicesGetData(url, reqData) {
       });
   }
 
+  export function servicesPatchData(url, reqData) {
+    return axios
+      .patch(url, reqData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${storageGetToken}`, 
+        },  
+      })
+      .then((res) => res.data)
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }
+

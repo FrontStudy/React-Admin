@@ -14,9 +14,25 @@ import MydiarypageDetail from './screen/diary/MydiarypageDetail.js';
 import DiaryEdit from './screen/diary/DiaryEdit.js';
 import Myprofile from './screen/diary/Myprofile.js';
 import SharedDiarypageDetail from './screen/diary/SharedDiarypageDetail.js';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
+    <div className="App">
+      <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          limit={1}
+          theme="light"
+        />
       <Routes>
         <Route path="/calendar" element={<Diarymain />} />
         <Route path="/Adminmain/*" element={<Adminmain />} /> 
@@ -76,9 +92,8 @@ function App() {
           element={<DiarylayoutMain 
             nowTitle="공유일기 상세정보" 
             component={<SharedDiarypageDetail />}/>
-          }
-        />
       </Routes>
+      </div>
   );
 }
 
